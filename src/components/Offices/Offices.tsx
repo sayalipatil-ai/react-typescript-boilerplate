@@ -1,6 +1,6 @@
 import React, { useLayoutEffect, useState, Suspense } from 'react';
 import { Link } from 'react-router-dom';
-import { Grid, Button as MuiButton, Box} from '@mui/material';
+import { Grid, Button as MuiButton, Box } from '@mui/material';
 import { printLog } from '../Utils/Utils';
 import { OrderPageHeader } from '../OrderPageHeader/OrderPageHeader';
 import BasicModal from '../BasicModel/BasicModel';
@@ -8,6 +8,7 @@ import Card from '../Card/Card';
 import Notification from '../Notification/Notification';
 import LTLQuote from '../LTLQuote/LTLQuote';
 import TabsComponent from '../TabsComponent/TabsComponent';
+import { fetchOffices } from '../store/Office/services'; // Adjust the path based on your folder structure
 
 type Office = {
   name: string;
@@ -25,27 +26,26 @@ export default function Offices() {
     setShowModal(!showModal);
   };
 
-  async function fetchData() {
-    try {
-      const response = await fetch('/api/offices');
-      const result = (await response.json()) as { offices: Office[] | [] };
-      setData(result.offices);
-      setLoading(false);
-    } catch (err) {
-      printLog('Error fetching data');
-      setLoading(false);
-    }
-  }
-
   useLayoutEffect(() => {
+    async function fetchData() {
+      try {
+        const offices = await fetchOffices(); // Use fetchOffices from services.ts
+        setData(offices);
+      } catch (error) {
+        console.error(error); // Log error message
+      } finally {
+        setLoading(false);
+      }
+    }
+
     fetchData();
   }, []);
 
   return (
     <div>
-      <OrderPageHeader /> 
-      <Grid container spacing={2} style={{marginTop:"-25px"}}>
-        <Grid item xs={6} >
+      <OrderPageHeader />
+      <Grid container spacing={2} style={{ marginTop: '-25px' }}>
+        <Grid item xs={6}>
           <Card startTitle="Card Info" endTitle="Filter Date" raised>
             Card1
           </Card>
@@ -58,15 +58,15 @@ export default function Offices() {
       </Grid>
       <p style={{ marginBottom: '-11px' }}>Offices</p>
       <p style={{ marginBottom: '4px' }}>Offices</p>
-      <Link to="/" style={{ textDecoration: 'none', color: 'inherit'}}>Home</Link>
+      <Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>
+        Home
+      </Link>
       {loading && <p>Loading...</p>}
-      <ul>
         {data.map((item) => (
-          <li key={item.name}>{item.name}</li>
+          <div style={{paddingBottom:"3px"}} key={item.name}>{item.name}</div>
         ))}
-      </ul>
-      <p style={{ marginBottom: '-11px', marginTop:'-10px' }}>Office1</p>
-      <p>Office2</p>
+      {/* <p style={{ marginBottom: '-11px', marginTop: '-10px' }}>Office1</p>
+     <p>Office2</p> */}
       <MuiButton variant="outlined" onClick={toggleModal}>
         Open Modal
       </MuiButton>
@@ -75,16 +75,16 @@ export default function Offices() {
           <div>Modal Content</div>
         </BasicModal>
       )}
-     <Box
-  sx={{
-    border: '3px solid rgb(245 157 37)',
-    borderRadius: '10px',
-    padding:'3px',
-    marginTop:'3px',
-  }}
->
-  <Notification type="warning">Warning Message</Notification>
-</Box>
+      <Box
+        sx={{
+          border: '3px solid rgb(245 157 37)',
+          borderRadius: '10px',
+          padding: '3px',
+          marginTop: '3px',
+        }}
+      >
+        <Notification type="warning">Warning Message</Notification>
+      </Box>
       <LTLQuote />
       <TabsComponent
         activeTab={activeTab}
