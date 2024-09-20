@@ -1,0 +1,38 @@
+/* carriers.css */
+.container {
+  height: 100%;
+  background-color: white;
+}
+
+.mainContainer{
+  align-items: flex-start !important;
+}
+
+.text {
+  font-size: 1.125rem; 
+  font-weight: 600;
+  color: #4a5568; 
+  margin: 0; 
+}
+
+.link {
+  text-decoration: none; 
+  color: inherit; 
+}
+
+.info {
+  font-size: 1rem; 
+  color: #4a5568; 
+  margin: 0.5rem 0; 
+}
+
+.inline-container {
+  display: flex; 
+  align-items: center; 
+}
+
+.link,
+.info {
+  margin: 0; 
+  padding: 0; 
+}

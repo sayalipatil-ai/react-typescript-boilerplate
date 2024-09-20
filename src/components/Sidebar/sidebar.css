@@ -1,0 +1,50 @@
+
+.sidebar-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-color: white;
+  position: relative;
+}
+
+.sidebar-toggle-button {
+  position: absolute;
+  top: 0px;
+  right: -16px;
+  color: black; /* Set the arrow icon color to black */
+  background: none; /* Ensure no background effect */
+  border: none; /* Remove any border if present */
+  cursor: pointer; /* Ensure the cursor is a pointer */
+  z-index: 2;
+}
+
+.sidebar-toggle-button:hover {
+  color: black; /* Ensure color stays black on hover */
+  background: none; /* Ensure no background effect on hover */
+}
+
+.sidebar-content {
+  padding: 8px;
+  padding-top: 8px;
+  padding-right: 40px;
+  transition: all 0.3s ease-in-out;
+}
+
+.sidebar-content.collapsed {
+  width: 15px;
+}
+
+.sidebar-content.expanded {
+  width: 200px; /* Adjust this width based on your requirements */
+}
+
+.menu-link {
+  
+  display: flex;
+  align-items: center;
+  height: 48px; /* Adjust the height if needed */
+  width: 100%;
+  text-decoration: none;
+  color: inherit;
+}
+
