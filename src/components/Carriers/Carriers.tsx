@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Box } from '@mui/material';
-import Layout from '../Layout/Layout';
-import { ConfigManager } from '../Utils/ConfigManager';
+import Layout from '../../layout/Layout';
+import { ConfigManager } from '../../utils/ConfigManager';
 import './carrier.css'; // Assuming you have styles in a CSS file
 
 const Carriers: React.FC = () => {

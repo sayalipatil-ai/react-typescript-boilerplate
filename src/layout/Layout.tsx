@@ -1,8 +1,8 @@
 
 import React from 'react';
 import { Box } from '@mui/material';
-import Header from '../Header/Header'; // Adjust the import path as needed
-import Sidebar from '../Sidebar/Sidebar'; // Adjust the import path as needed
+import Header from '../components/Header/Header'; // Adjust the import path as needed
+import Sidebar from '../components/Sidebar/Sidebar'; // Adjust the import path as needed
 import './layout.css'; // Ensure this file contains the necessary styles
 
 

@@ -1,14 +1,14 @@
 import React, { useLayoutEffect, useState, Suspense } from 'react';
 import { Link } from 'react-router-dom';
 import { Grid, Button as MuiButton, Box } from '@mui/material';
-import { printLog } from '../Utils/Utils';
+import { printLog } from '../../utils/Utils';
 import { OrderPageHeader } from '../OrderPageHeader/OrderPageHeader';
 import BasicModal from '../BasicModel/BasicModel';
 import Card from '../Card/Card';
 import Notification from '../Notification/Notification';
 import LTLQuote from '../LTLQuote/LTLQuote';
 import TabsComponent from '../TabsComponent/TabsComponent';
-import { fetchOffices } from '../store/Office/services'; // Adjust the path based on your folder structure
+import { fetchOffices } from '../../store/Office/services'; // Adjust the path based on your folder structure
 
 type Office = {
   name: string;
@@ -63,7 +63,7 @@ export default function Offices() {
       </Link>
       {loading && <p>Loading...</p>}
         {data.map((item) => (
-          <div style={{paddingBottom:"3px"}} key={item.name}>{item.name}</div>
+          <div style={{paddingBottom:'3px'}} key={item.name}>{item.name}</div>
         ))}
       {/* <p style={{ marginBottom: '-11px', marginTop: '-10px' }}>Office1</p>
      <p>Office2</p> */}

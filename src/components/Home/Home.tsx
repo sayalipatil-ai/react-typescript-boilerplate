@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { List, ListItem, Typography, Button } from '@mui/material';
 // import { useOfficeState } from '../../store'; // Replace with your actual store hook
-import Layout from '../Layout/Layout' // Ensure this component is using MUI
+import Layout from '../../layout/Layout' // Ensure this component is using MUI
 
 const Home: React.FC = () => {
   //   const { officesStore } = useOfficeState(); // Access state from your store

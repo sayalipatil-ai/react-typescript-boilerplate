@@ -42,7 +42,7 @@ const Sidebar: React.FC = () => {
       </IconButton>
       <div className={`sidebar-content ${isCollapsed ? 'collapsed' : 'expanded'}`}>
         <Box>
-          <MenuList sx={{marginTop:"20px"}} >
+          <MenuList sx={{marginTop:'20px'}} >
             {menuItems.map(({ label, icon, path }) => (
               <MenuItem key={path}>
                 <Link to={path} className="menu-link">

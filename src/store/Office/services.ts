@@ -1,4 +1,4 @@
-import { Office } from "./types";
+import { Office } from './types';
 
 export async function fetchOffices(): Promise<Office[]> {
   try {

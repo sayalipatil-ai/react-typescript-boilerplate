@@ -1,17 +1,15 @@
 {
-  
-    "compilerOptions": {
-      "target": "esnext",
-      "module": "esnext",
-      "moduleResolution": "node",
-      "strict": true,
-      "jsx": "react-jsx",  // Ensure this is set
-      "esModuleInterop": true,
-      "skipLibCheck": true,
-      "forceConsistentCasingInFileNames": true,
-      "resolveJsonModule": true,
-      "noEmit": true
-    },
-    "include": ["src"]
-  
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "node16",  
+    "moduleResolution": "node16",
+    "strict": true,
+    "jsx": "react-jsx",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "noEmit": true
+  },
+  "include": ["src"]
 }

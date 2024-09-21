@@ -19,7 +19,7 @@ const LTLQuote: React.FC = () => {
         >
           Xpo Logistics
         </Typography>
-        <h2 style={{marginTop:"-10px"}}><span style={{color:'red'}}>XPO</span>Logistics</h2>
+        <h2 style={{marginTop:'-10px'}}><span style={{color:'red'}}>XPO</span>Logistics</h2>
       </Grid>
       <Grid item xs={2}>
         <Typography
