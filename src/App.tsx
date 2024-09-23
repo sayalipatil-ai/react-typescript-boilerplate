@@ -1,15 +1,19 @@
 import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
+import { ThemeProvider } from '@mui/material/styles';
 import AppRouter from './views/AppRouter';
+import theme from './utils/theme'; 
 
 const App: React.FC = () => {
   return (
+    <ThemeProvider theme={theme}>
       <Router>
         <div className="App">
           <AppRouter />
         </div>
-      </Router>   
- );
+      </Router>
+    </ThemeProvider>
+  );
 };
 
 export default App;
@@ -21,22 +25,6 @@ export default App;
 
 
 
-// import React from 'react';
-// import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-// import Header from './components/Header/Header';
-// import Sidebar from './components/Sidebar/Sidebar';
-// import Home from './components/Home/Home';
-// import Carriers from './components/Carriers/Carriers';
-// //import './App.css';
-
-
-// const routes = [
-//   { path: '/', element: <Home /> },
-//   { path: '/carriers', element: <Carriers /> },
-// ];
-
-
- 
 // const App: React.FC = () => {
 //   return (
     
